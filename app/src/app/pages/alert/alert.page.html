@@ -1,0 +1,36 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>Alert</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+	<h1>Basic</h1>
+	<ion-button (click)="handleButtonClick()">Show Alert</ion-button>
+
+	<h1>Standalone</h1>
+	<ion-button (click)="presentAlert()">Alert</ion-button>
+	<ion-button (click)="presentAlertLongMessage()">Long Message</ion-button>
+	<ion-button (click)="presentAlertMultipleButtons()">Multiple Buttons</ion-button>
+	<ion-button (click)="presentAlertNoMessage()">Alert No Message</ion-button>
+	<ion-button (click)="presentAlertConfirm()">Confirm</ion-button>
+	<ion-button (click)="presentAlertPrompt()">Prompt</ion-button>
+	<ion-button (click)="presentAlertRadio()">Radio</ion-button>
+	<ion-button (click)="presentAlertCheckbox()">Checkbox</ion-button>
+	<ion-button (click)="presentWithCssClass()">CssClass</ion-button>
+
+	<h1>Translucent</h1>
+	<ion-button (click)="presentTranslucentAlert()">Alert</ion-button>
+	<ion-button color="secondary" (click)="presentTranslucentAlertLongMessage()">Long Message</ion-button>
+	<ion-button color="danger" (click)="presentTranslucentAlertMultipleButtons()">Multiple Buttons</ion-button>
+	<ion-button color="light" (click)="presentTranslucentAlertNoMessage()">Alert No Message</ion-button>
+
+	<ion-button color="dark" (click)="presentTranslucentAlertConfirm()">Confirm</ion-button>
+	<ion-button color="primary" (click)="presentTranslucentAlertPrompt()">Prompt</ion-button>
+	<ion-button color="secondary" (click)="presentTranslucentAlertRadio()">Radio</ion-button>
+	<ion-button color="danger" (click)="presentTranslucentAlertCheckbox()">Checkbox</ion-button>
+
+</ion-content>

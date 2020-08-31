@@ -1,0 +1,1 @@
+find src -name "*utils.ts" | while read _OLD; do _DST="e2e/$(dirname $(dirname $_OLD))"; mkdir -p $_DST; mv $_OLD $_DST; done

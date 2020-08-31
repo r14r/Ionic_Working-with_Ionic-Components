@@ -1,0 +1,18 @@
+#!/usr/local/bin/bash
+
+ROOT=/CLOUD/Development.Ionic/Repositories.FromGithub/repositories/
+
+
+# ./ionic4-toolbox/App3-Demo-02/src/components
+# ./ionic4-toolbox/App-Capacitor/site/src/components
+# ./ionic4-toolbox/App3-Samples-ElementsIonic/Source/src/components
+
+
+
+ls -1d $ROOT/ionic-team/capacitor/site/src/components/*		|\
+while read _DIR
+do
+	_CMP="$(basename "$(dirname "$_DIR")")"
+
+	echo "ionic generate page pages/preview/${_CMP,,} $_CMP"
+done

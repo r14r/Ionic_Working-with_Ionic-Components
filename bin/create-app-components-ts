@@ -1,0 +1,35 @@
+#!/usr/local/bin/bash
+
+_PREV=
+
+ grep loadC app-routing.module.ts  | cut -d"'" -f2		|\
+ while read _LINE
+ do
+	_LINK=${_LINE}
+
+	_THIS=${_LINE%%/*}
+	_ITEM=${_LINE#*/}
+
+	#printf "LINE=%-40s THIS=%-40s LINK=%-40s\n" $_LINE $_THIS $_LINK
+
+	if [[ "$_THIS" == "$_PREV" ]]; then
+		:
+	else
+		_TEMP=${_THIS//\//-}
+		_ARR=(${_TEMP//-/ })
+		_NAME="${_ARR[@]^}"
+
+		printf "		]},\n"
+		printf "		{ name: %s, items: [\n " "'$_NAME'"
+		#printf "				{ name: %-40s, url: %-40s, icon: ICON_DEFAULT }, \n" \'${_ITEM}\' \'/$_LINK\'
+		_PREV=$_THIS
+	fi
+
+	_TEMP=${_ITEM//\//-}
+	_ARR=(${_TEMP//-/ })
+	_NAME="${_ARR[@]^}"
+
+	printf "				{ name: %-40s, url: %-40s, icon: ICON_DEFAULT }, \n" "'${_NAME}'" "'/$_LINK'"
+done
+
+echo "		]},"

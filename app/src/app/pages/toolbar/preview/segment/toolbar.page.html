@@ -1,0 +1,39 @@
+<ion-header>
+	<ion-toolbar [color]="isAndroid ? 'danger' : ''">
+		<ion-buttons start>
+			<button ion-button color="danger" icon-only showWhen="ios">
+				<ion-icon name="create"></ion-icon>
+			</button>
+			<button ion-button icon-only hideWhen="ios">
+				<ion-icon name="create"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-segment [(ngModel)]="selectedSegment" [color]="isAndroid ? 'light' : 'danger'">
+			<ion-segment-button value="new" checked>
+				New
+			</ion-segment-button>
+			<ion-segment-button value="hot">
+				Hot
+			</ion-segment-button>
+		</ion-segment>
+		<ion-buttons end>
+			<button ion-button color="danger" icon-only showWhen="ios">
+				<ion-icon name="more"></ion-icon>
+			</button>
+			<button ion-button icon-only hideWhen="ios">
+				<ion-icon name="more"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content></ion-content>
+
+<ion-footer>
+	<ion-toolbar [color]="isAndroid ? 'danger' : 'light'">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Karma Score: 2317</ion-title>
+	</ion-toolbar>
+</ion-footer>

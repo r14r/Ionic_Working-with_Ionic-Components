@@ -1,0 +1,61 @@
+<ion-header>
+	<ion-toolbar>
+		<ion-buttons slot="start">
+			<ion-menu-button></ion-menu-button>
+		</ion-buttons>
+		<ion-title>button</ion-title>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content>
+	<ion-grid class="board">
+		<ion-row>
+			<ion-col class="cell" *ngFor="let s of sizes">
+				{{ s }}
+			</ion-col>
+		</ion-row>
+		<ion-row *ngFor="let c of colors">
+			<ion-col>{{ c }}</ion-col>
+			<ion-col class="cell" *ngFor="let s of sizes">
+				<span *ngFor="let f of classes">
+					<span *ngFor="let state of [ 'disabled', 'enabled' ]">
+						<ion-button size="{{ s }}" color="{{ c }}" class="{{ f }}">Push: {{ state }}
+						</ion-button>
+					</span>
+				</span>
+			</ion-col>
+		</ion-row>
+	</ion-grid>
+
+	<section>
+		<header>Block Width</header>
+		<ion-button expand="block">A block button</ion-button>
+	</section>
+
+	<section class="full-width">
+		<header>Full Width</header>
+		<ion-button expand="full" color="secondary">A full-width button</ion-button>
+	</section>
+
+	<p>
+		<ion-button size="small" style="--opacity: .2">Opacity: 0.2</ion-button>
+	</p>
+
+	<p>
+		<ion-button size="small" disabled (click)="clickedButton(event)">Disabled
+		</ion-button>
+		<ion-button size="small" color="secondary" disabled>Secondary Disabled</ion-button>
+		<ion-button size="small" color="tertiary" style="--opacity: 1" disabled>Disabled opacity: 1</ion-button>
+	</p>
+
+	<p>
+		<ion-button size="small" (click)="toggleDisabled()">Toggle Disabled</ion-button>
+	</p>
+
+	<p>
+		<ion-button size="small" id="dynamicColor1" (click)="changeColor(event)">Change Color</ion-button>
+		<ion-button size="small" id="dynamicColor2" (click)="changeColor(event)" fill="outline">Change Color
+		</ion-button>
+	</p>
+
+</ion-content>

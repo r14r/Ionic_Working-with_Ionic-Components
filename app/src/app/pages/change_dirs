@@ -1,0 +1,11 @@
+#!/usr/local/bin/bash
+
+ls -1d */*				|\
+while read _LINE
+do
+	_THIS=${_LINE%/*}
+	_ITEM=${_LINE#*/}
+
+	mkdir -p        $_ITEM
+	mv  $_LINE $_ITEM/$_THIS
+done

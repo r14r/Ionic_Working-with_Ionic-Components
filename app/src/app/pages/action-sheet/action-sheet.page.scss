@@ -1,0 +1,109 @@
+/*
+ * Action Sheet CSS
+ * ----------------------------------------------------------------------------
+ */
+
+:root {
+	--ion-safe-area-top: 20px;
+	--ion-safe-area-bottom: 22px;
+}
+
+.my-color-class {
+	--height: 100px;
+	--width: 400px;
+
+	--max-height: 200px;
+	--max-width: 400px;
+	--min-height: 50px;
+	--min-width: 50px;
+
+	--background: #292929;
+	--background-activated: #ffff00;
+	--background-selected: #222222;
+
+	--color: #dfdfdf;
+
+	color: blue;
+}
+
+.my-custom-class {
+	--ion-safe-area-top: 20px;
+	--ion-safe-area-bottom: 40px;
+
+	--max-width: 300px;
+	--height: 325px;
+
+	.ion-md-share {
+		color: #ed4248;
+	}
+	.ion-md-arrow-dropright-circle {
+		color: #508ae4;
+	}
+	.ion-md-heart-outline {
+		color: #31d55f;
+	}
+}
+
+.action-sheet-cancel ion-icon,
+.action-sheet-destructive ion-icon {
+	background-color: red;
+}
+
+.action-sheet-title {
+	color: red !important;
+	font-style: bold !important;
+	background-color: #488aff !important;
+}
+.action-sheet-group:first-child {
+	padding: 0 !important;
+}
+.action-sheet-group-cancel {
+	background-color: #488aff !important;
+}
+.cancel {
+	color: magenta !important;
+}
+
+.my-custom-button {
+	font-size: 20px;
+}
+
+h1 {
+	color: red;
+}
+
+.red {
+	background-color: #ea445a;
+}
+
+.green {
+	background-color: #76d672;
+}
+
+.blue {
+	background-color: #3478f6;
+}
+
+.yellow {
+	background-color: #ffff80;
+}
+
+.pink {
+	background-color: #ff6b86;
+}
+
+.purple {
+	background-color: #7e34f6;
+}
+
+.black {
+	background-color: #000;
+}
+
+.fuchsia {
+	background-color: #cc00ff;
+}
+
+.orange {
+	background-color: #f69234;
+}

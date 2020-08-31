@@ -1,0 +1,31 @@
+#!/usr/local/bin/bash
+
+_PREV=
+
+find pages -name "*.module.ts"		|\
+sort								|\
+while read _LINE
+do
+	_LOAD=${_LINE/\.ts/}			# LOAD=pages/virtual-scroll/source/virtual-scroll.module
+
+	_LINE=${_LINE#*/}				# LINE=virtual-scroll/source/virtual-scroll.module.ts
+
+	_TEMP=${_LINE%/*}				# TEMP=virtual-scroll/source		toolbar/preview/segment
+	_THIS=${_TEMP%/*}				# THIS=virtual-scroll/source		toolbar/preview
+	_ITEM=${_TEMP##*/}				# ITEM=source						preview/segment    
+
+	#printf "%-40s %-40s %-40s %-40s\n" $_LINE $_TEMP $_THIS $_ITEM
+
+	if [[ $_THIS == $_ITEM ]]; then
+		_PATH=${_THIS}
+	else
+		_PATH=${_THIS,,}/${_ITEM,,}	# PATH=virtual-scroll-source
+	fi
+
+	_NAME="$(grep PageModule ${_LOAD}.ts | cut -d' ' -f3)"
+	
+	# { path: 'home', loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)},
+	printf "{ path: '%s', loadChildren: () => import('./%s').then(m => m.%s) },\n" $_PATH $_LOAD $_NAME
+done
+
+
