@@ -1,0 +1,20 @@
+#!/usr/local/bin/bash
+
+_DIR="/Users/Shared/CLOUD"
+_DST="$_DIR/Development.GitHub/Repositories.FromGithub/repositories/r14r/Ionic_Working-with_Ionic-Components/App/src/app"
+_SRC="$_DIR/Development.Ionic/Repositories.FromGithub/repositories/ionic-team/ionic-docs/src/demos/api"
+
+_FLD=site-api
+
+echo "cd $_DST"
+
+ls -1d $_SRC/*		|\
+while read _TMP
+do
+	_CMP="$(basename "$(dirname "$_TMP")")"
+	_CMP="$(basename "$_TMP")"
+
+	echo "ionic generate page     pages/$_FLD/${_CMP,,}"
+	echo "rm -rf            $_DST/pages/$_FLD/${_CMP,,}/demo"
+	echo "cp -R $_SRC/$_CMP $_DST/pages/$_FLD/${_CMP,,}/demo"
+done

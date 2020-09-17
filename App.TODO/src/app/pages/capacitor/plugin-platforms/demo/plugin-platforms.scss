@@ -1,0 +1,15 @@
+$link-color: #5EB6FC;
+
+plugin-platforms {
+  display: block;
+  .platforms {
+    .platform {
+      display: inline-block;
+    }
+    
+    img {
+      margin-left: 12px;
+      height: 26px;
+    }
+  }
+}

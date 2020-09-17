@@ -1,6 +1,23 @@
 {
     "editor.formatOnSave": true,
     "files.exclude": {
-        "app/node_modules": true
-    }
+        "**/node_modules": true,
+        "**/node_modules.*": true,
+        "**/tslint.json": true,
+        "**/tsconfig.spec.json": true,
+        "**/tsconfig.app.json": true,
+        "**/karma.conf.js": true,
+        "**/ionic.starter.json": true,
+        "**/ionic.config.json": true,
+        "**/browserslist": true,
+        "**/angular.json": true,
+        "**/zone-flags.ts": true,
+        "**/test.ts": true,
+        "**/polyfills.ts": true,
+        ".env.d": true,
+        ".envrc": true,
+        "App/package-lock.json": true
+    },
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4
 }
